@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Business System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page { display: none; }
+    .active { display: block; }
+  </style>
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- เมนูนำทาง -->
+  <nav class="bg-blue-600 text-white p-4 flex justify-between">
+    <h1 class="font-bold">บริการระบบจัดหางาน</h1>
+    <div>
+      <button onclick="showPage('เข้าสู่ระบบ')" class="px-2">เข้าสู่ระบบ</button>
+    </div>
+  </nav>
+
+  <!-- เนื้อหาแต่ละหน้า -->
+  <main class="p-6">
+    <!-- 1. Home -->
+    <section id="home" class="page active">
+      <h2 class="text-2xl font-bold mb-4">"Welcome"</h2>
+      <p>Transform traditional workflows into a fully digital experience with intelligent business solutions.</p>
+    </section>
+
+    <!-- 2. Register -->
+    <section id="สมัครสมาชิก1" class="page">
+      <h2 class="text-xl font-bold mb-4">Register</h2>
+      <form class="space-y-3">
+        <input type="text" placeholder="Username" class="w-full p-2 border rounded">
+        <input type="Email" placeholder="Email" class="w-full p-2 border rounded">
+        <input type="password" placeholder="Password" class="w-full p-2 border rounded">
+        <input type="password" placeholder="Confirm Password" class="w-full p-2 border rounded">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">สมัครสมาชิก</button>
+      </form>
+    </section>
+
+    <!-- 3. Login -->
+    <section id="เข้าสู่ระบบ" class="page">
+      <h2 class="text-xl font-bold mb-4">เข้าสู่ระบบ/ลงทะเบียน</h2>
+      <form class="space-y-3">
+        <p>เลขประจำตัวประชาชน</p>
+        <input type="เลขประจำตัวประชาชน" placeholder="เลขประจำตัวประชาชน" class="w-full p-2 border rounded">
+        <p>รหัสผ่าน</p>
+        <input type="รหัสผ่าน" placeholder="รหัสผ่าน" class="w-full p-2 border rounded">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">เข้าสู่ระบบ</button>
+        <p>หากท่านยังไม่มีรหัสผู้ใช้งาน</p>
+        <button onclick="showPage('สมัครสมาชิก1')" class="bg-blue-600 text-white px-4 py-2 rounded" >สมัครสมาชิก</button>
+      </form>
+    </section>
+
+    <!-- 4. Dashboard -->
+    <section id="dashboard" class="page">
+      <h2 class="text-2xl font-bold mb-4">About</h2>
+      <ul class="list-disc pl-6">
+        <li onclick="showPage('profile')">Profile</li>
+        <li onclick="showPage('datalist')">Data List</li>
+        <li onclick="showPage('adddata')">Add data</li>
+        <li onclick="showPage('logout')">Logout</li>
+      </ul>
+    </section>
+
+    <!-- 5. Profile -->
+    <section id="profile" class="page">
+      <h2 class="text-xl font-bold mb-4">Profile</h2>
+      <p>Username: Phitchaya</p>
+      <p>Email: phitchaya1502@email.com</p>
+    </section>
+
+    <!-- 6. Data List -->
+    <section id="datalist" class="page">
+      <h2 class="text-xl font-bold mb-4">Data List</h2>
+      <table class="w-full border">
+        <tr class="bg-gray-200">
+          <th class="border p-2">ID</th>
+          <th class="border p-2">Data Name</th>
+          <th class="border p-2">Edit Data</th>
+        </tr>
+        <tr>
+          <td class="border p-2">1</td>
+          <td class="border p-2">Ferrari</td>
+          <td class="border p-2">
+            <button onclick="showPage('datadetail1')" class="text-blue-600">view</button>
+            <button onclick="showPage('editdata1')" class="text-yellow-600">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-2">2</td>
+          <td class="border p-2">Mercedes Benz</td>
+          <td class="border p-2">
+            <button onclick="showPage('datadetail2')" class="text-blue-600">view</button>
+            <button onclick="showPage('editdata2')" class="text-yellow-600">Edit</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="border p-2">3</td>
+          <td class="border p-2">McLaren</td>
+          <td class="border p-2">
+            <button onclick="showPage('datadetail3')" class="text-blue-600">view</button>
+            <button onclick="showPage('editdata3')" class="text-yellow-600">Edit</button>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 7. Data Detail -->
+    <section id="datadetail1" class="page">
+      <h2 class="text-xl font-bold mb-4">Ferrari</h2>
+      <p>Ferrari is an Italian supercar brand renowned worldwide. It has a long-standing history in motorsports and is recognized for producing high-performance vehicles. Every car is meticulously handcrafted and made using advanced automotive technologies, making them highly valuable and a dream for people around the world.</p>
+    </section>
+     
+    <section id="datadetail2" class="page">
+      <h2 class="text-xl font-bold mb-4">Mercedes Benz</h2>
+      <p>It is a German company that manufactures luxury cars, buses, and trucks. Founded in 1926 through the merger of Benz & Cie and Daimler-Motoren-Gesellschaft (DMG), the company is renowned for its automotive innovations. Today, it offers a range of vehicles, including the S-Class, E-Class, and C-Class, as well as electric cars in the EQ series, and high-performance models under the AMG brand.</p>
+    </section>
+    
+    <section id="datadetail3" class="page">
+      <h2 class="text-xl font-bold mb-4">McLaren</h2>
+      <p>It is a British supercar and sports car brand with origins in Formula 1 racing. Bruce McLaren founded the McLaren Racing team in 1963, which later evolved into McLaren Automotive, focusing on producing high-performance road cars built using Formula 1 technology.</p>
+    </section>
+
+    <!-- 8. Add Data -->
+    <section id="adddata" class="page">
+      <h2 class="text-xl font-bold mb-4">Add New Data</h2>
+      <form class="space-y-3">
+        <input type="text" placeholder="DataName" class="w-full p-2 border rounded">
+        <textarea placeholder="Details" class="w-full p-2 border rounded"></textarea>
+        <button class="bg-green-600 text-white px-4 py-2 rounded">Submit</button>
+      </form>
+    </section>
+
+    <!-- 9. Edit Data -->
+    <section id="editdata1" class="page">
+      <h2 class="text-xl font-bold mb-4">Editdata</h2>
+      <form class="space-y-3">
+        <input type="text" value="Ferrari" class="w-full p-2 border rounded">
+        <textarea class="w-full p-2 border rounded">Original Details</textarea>
+        <button class="bg-yellow-600 text-white px-4 py-2 rounded">Update</button>
+      </form>
+    </section>
+    
+    <section id="editdata2" class="page">
+      <h2 class="text-xl font-bold mb-4">Editdata</h2>
+      <form class="space-y-3">
+        <input type="text" value="Mercedes Benz" class="w-full p-2 border rounded">
+        <textarea class="w-full p-2 border rounded">Original Details</textarea>
+        <button class="bg-yellow-600 text-white px-4 py-2 rounded">Update</button>
+      </form>
+    </section>
+
+    <section id="editdata3" class="page">
+      <h2 class="text-xl font-bold mb-4">Editdata</h2>
+      <form class="space-y-3">
+        <input type="text" value="McLaren" class="w-full p-2 border rounded">
+        <textarea class="w-full p-2 border rounded">Original Details</textarea>
+        <button class="bg-yellow-600 text-white px-4 py-2 rounded">Update</button>
+      </form>
+    </section>
+
+    <!-- 10. Logout -->
+    <section id="logout" class="page">
+      <h2 class="text-xl font-bold mb-4">Logout</h2>
+      <p>You have successfully logged out</p>
+      <button onclick="showPage('login')" class="bg-blue-600 text-white px-4 py-2 rounded">Log in again</button>
+    </section>
+  </main>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
